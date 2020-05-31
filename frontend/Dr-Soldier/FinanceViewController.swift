@@ -21,8 +21,8 @@ class FinanceViewController: UIViewController, UITextViewDelegate {
     var Monthtmpstring : String = ""
     var Ratiotmpstring : String = ""
     
-    var activeTextView = UITextView.init()
-    var num = 1
+    //var activeTextView = UITextView.init()
+    //var num = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +86,7 @@ class FinanceViewController: UIViewController, UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.textColor = UIColor.black
         textView.text = ""
-        self.activeTextView = textView
+        //self.activeTextView = textView
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -105,7 +105,7 @@ class FinanceViewController: UIViewController, UITextViewDelegate {
         if textView == self.Month{
             Monthtmpstring = Month.text
             if let MonthInt = Int64(Month.text!){
-                 Month.text =  makemoneyform(Money:MonthInt) + "개월"
+                 Month.text =  "\(MonthInt) 개월"
             }
             if Monthtmpstring == ""{
                 Month.textColor = UIColor.gray
